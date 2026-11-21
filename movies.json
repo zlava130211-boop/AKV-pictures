@@ -1,0 +1,75 @@
+[
+  {
+    "id": "akv-01",
+    "title": "The Crimson Horizon",
+    "year": 2026,
+    "genre": "Sci-Fi",
+    "quality": "4K",
+    "size": "4.8 GB",
+    "featured": true,
+    "poster": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80",
+    "backdrop": "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=1920&q=80",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+    "description": "When a deep-space extraction crew uncovers an ancient signal beyond the outer rim, one rogue pilot must outrun a corporate armada to deliver the truth to Earth."
+  },
+  {
+    "id": "akv-02",
+    "title": "Vengeance in Chennai",
+    "year": 2026,
+    "genre": "Action",
+    "quality": "4K",
+    "size": "3.6 GB",
+    "featured": false,
+    "poster": "https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?auto=format&fit=crop&w=800&q=80",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+    "description": "An undercover tactical officer infiltrates a high-stakes coastal smuggling syndicate in a relentless race against time before monsoon nightfall."
+  },
+  {
+    "id": "akv-03",
+    "title": "Midnight Frequencies",
+    "year": 2025,
+    "genre": "Thriller",
+    "quality": "1080p",
+    "size": "2.1 GB",
+    "featured": false,
+    "poster": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+    "description": "A late-night radio host receives an encrypted broadcast predicting unsolved crimes across the city—until the next voice on the line is his own."
+  },
+  {
+    "id": "akv-04",
+    "title": "Golden Monsoons",
+    "year": 2025,
+    "genre": "Drama",
+    "quality": "4K",
+    "size": "3.9 GB",
+    "featured": false,
+    "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=800&q=80",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+    "description": "Spanning three generations of a legendary cinema family, an aspiring director fights to save their historic single-screen theater."
+  },
+  {
+    "id": "akv-05",
+    "title": "Zero Gravity Laughs",
+    "year": 2026,
+    "genre": "Comedy",
+    "quality": "1080p",
+    "size": "1.8 GB",
+    "featured": false,
+    "poster": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=80",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+    "description": "When four mismatched wedding caterers accidentally board a commercial orbital shuttle, they have 48 hours to fake astronaut credentials."
+  },
+  {
+    "id": "akv-06",
+    "title": "Neon Ronin",
+    "year": 2025,
+    "genre": "Action",
+    "quality": "4K",
+    "size": "4.2 GB",
+    "featured": false,
+    "poster": "https://images.unsplash.com/photo-1542204165-65bf26472b9b?auto=format&fit=crop&w=800&q=80",
+    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+    "description": "In a rain-drenched cyber metropolis, a retired blade master returns to protect the young hacker holding the keys to the city grid."
+  }
+]
