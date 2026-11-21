@@ -31,6 +31,27 @@
             }
         }
     </script>
+    // Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDIlpOW4YvSZtoKNhDO4urHX0uepr6wR84",
+  authDomain: "akv-pictures.firebaseapp.com",
+  projectId: "akv-pictures",
+  storageBucket: "akv-pictures.firebasestorage.app",
+  messagingSenderId: "758791430944",
+  appId: "1:758791430944:web:d248c9b79f5e1ac721ad45",
+  measurementId: "G-L5P6CVPHDZ"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
     <style>
         /* Pure White & Metallic Gold Luxury Theme */
