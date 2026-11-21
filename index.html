@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AKV Pictures | Official Cinema Portal</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cinzel for Royal Gold Titles, Inter for Clean UI -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        royal: ['Cinzel', 'serif'],
+                    },
+                    colors: {
+                        gold: {
+                            light: '#F9E79F',
+                            DEFAULT: '#D4AF37',
+                            dark: '#B8860B',
+                            bronze: '#8A6214'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Pure White & Metallic Gold Luxury Theme */
+        body {
+            background-color: #FFFFFF;
+            color: #1A1A1A;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Metallic Gold Gradient Text */
+        .gold-text-gradient {
+            background: linear-gradient(135deg, #996515 0%, #D4AF37 35%, #F9E79F 50%, #D4AF37 65%, #8A6214 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+        }
+
+        /* Metallic Gold Button & Accent Gradient */
+        .gold-bg-gradient {
+            background: linear-gradient(135deg, #B8860B 0%, #D4AF37 50%, #C59B27 100%);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35);
+            transition: all 0.3s ease;
+        }
+        .gold-bg-gradient:hover:not(:disabled) {
+            background: linear-gradient(135deg, #996515 0%, #E5C158 50%, #B8860B 100%);
+            box-shadow: 0 6px 22px rgba(212, 175, 55, 0.55);
+            transform: translateY(-2px);
+        }
+        .gold-bg-gradient:active:not(:disabled) {
+            transform: scale(0.97);
+        }
+
+        /* Gentle Floating Animation for Square-Proportioned Rounded Movie Cards */
+        @keyframes floatCard {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-7px);
+            }
+        }
+
+        .movie-floating-card {
+            background: #FFFFFF;
+            border-radius: 20px;
+            border: 1.5px solid rgba(212, 175, 55, 0.4);
+            box-shadow: 0 12px 30px -5px rgba(212, 175, 55, 0.16), 0 4px 12px -2px rgba(0, 0, 0, 0.04);
+            animation: floatCard 5.2s ease-in-out infinite;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .movie-floating-card:nth-child(2n) {
+            animation-delay: 1.1s;
+        }
+        .movie-floating-card:nth-child(3n) {
+            animation-delay: 2.2s;
+        }
+
+        .movie-floating-card:hover {
+            border-color: #D4AF37;
+            box-shadow: 0 20px 42px -4px rgba(212, 175, 55, 0.32), 0 8px 18px -2px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Header Glassmorphism */
+        .header-glass {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1.5px solid rgba(212, 175, 55, 0.3);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFFFFF;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D4AF37;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-amber-100 selection:text-amber-900">
+
+    <!-- ==================== TOP HEADER BAR ==================== -->
+    <header class="header-glass sticky top-0 z-40 w-full px-4 sm:px-8 py-3 transition-all">
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-2">
+            
+            <!-- Left: Custom Temple/Sunburst Golden Emblem SVG + 'AKV Pictures' -->
+            <div class="flex items-center gap-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                <div class="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 drop-shadow-md">
+                    <svg viewBox="0 0 120 120" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <radialGradient id="sunBurst" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="#FFF9D2" stop-opacity="1"/>
+                                <stop offset="42%" stop-color="#F59E0B" stop-opacity="0.9"/>
+                                <stop offset="78%" stop-color="#B8860B" stop-opacity="0.35"/>
+                                <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+                            </radialGradient>
+                            <linearGradient id="goldPlate" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#FFF8CC"/>
+                                <stop offset="28%" stop-color="#FBBF24"/>
+                                <stop offset="52%" stop-color="#D4AF37"/>
+                                <stop offset="76%" stop-color="#FEF08A"/>
+                                <stop offset="100%" stop-color="#996515"/>
+                            </linearGradient>
+                            <linearGradient id="templeStone" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="#2D1F14"/>
+                                <stop offset="50%" stop-color="#1A110B"/>
+                                <stop offset="100%" stop-color="#332215"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- Radiant Sunburst Halo -->
+                        <circle cx="60" cy="60" r="58" fill="url(#sunBurst)"/>
+                        <!-- Geometric Temple Crest -->
+                        <path d="M60 10 L85 25 L113 33 L113 87 L85 95 L60 110 L35 95 L7 87 L7 33 L35 25 Z" 
+                              fill="url(#templeStone)" stroke="url(#goldPlate)" stroke-width="3.5" stroke-linejoin="round"/>
+                        <path d="M60 17 L82 29 L106 37 L106 83 L82 91 L60 103 L38 91 L14 83 L14 37 L38 29 Z" 
+                              fill="none" stroke="#F9E79F" stroke-width="1" stroke-opacity="0.7"/>
+                        <!-- Temple Crown Orb & Base Triangle -->
+                        <circle cx="60" cy="30" r="4.2" fill="#FFFBEB"/>
+                        <polygon points="53,87 67,87 60,96" fill="#FEF08A"/>
+                        <!-- Bold Golden 'AKV' Letters -->
+                        <text x="60" y="70" text-anchor="middle" font-family="'Cinzel', serif" font-weight="800" font-size="31" letter-spacing="1.5" fill="url(#goldPlate)" stroke="#78350F" stroke-width="0.8">AKV</text>
+                    </svg>
+                </div>
+
+                <!-- Brand Name: 'AKV' in all caps + space + 'Pictures' -->
+                <div class="flex flex-col">
+                    <h1 class="text-xl sm:text-2xl md:text-3xl tracking-tight leading-none select-none">
+                        <span class="font-royal font-extrabold gold-text-gradient">AKV</span>
+                        <span class="font-sans font-semibold text-[#1A1A1A] ml-1.5">Pictures</span>
+                    </h1>
+                    <span class="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-amber-800/80 font-medium mt-0.5">Official Digital Releases</span>
+                </div>
+            </div>
+
+            <!-- Right: Admin Controls -->
+            <div class="flex items-center gap-2 sm:gap-3">
+                <!-- Guest View: Admin Button -->
+                <button id="openAdminLoginBtn" onclick="openLoginModal()" class="flex items-center gap-1.5 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full border-2 border-[#D4AF37] bg-white text-[#8A6214] font-bold text-xs sm:text-sm shadow-sm hover:bg-amber-50 transition-all active:scale-95">
+                    <svg class="w-4 h-4 text-[#B8860B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                    </svg>
+                    <span>Admin</span>
+                </button>
+
+                <!-- Admin Active Controls (Hidden until logged in) -->
+                <div id="adminActiveControls" class="hidden items-center gap-2 sm:gap-3">
+                    <span class="hidden md:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-300 text-amber-900 text-xs font-semibold">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        Admin Mode
+                    </span>
+                    
+                    <!-- '+' Add Movie Button -->
+                    <button onclick="openUploadModal()" class="gold-bg-gradient text-white font-bold px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full flex items-center gap-1.5 text-xs sm:text-sm">
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" stroke-width="2.6" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                        </svg>
+                        <span>Add Movie</span>
+                    </button>
+
+                    <!-- Logout Button -->
+                    <button onclick="logoutAdmin()" title="Logout Admin" class="p-2 sm:px-3.5 sm:py-2 rounded-full border border-gray-200 text-gray-700 hover:text-red-600 hover:border-red-200 hover:bg-red-50 transition-all text-xs font-semibold flex items-center gap-1">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+                        </svg>
+                        <span class="hidden sm:inline">Logout</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== MAIN CONTENT AREA ==================== -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-8 py-6 sm:py-10">
+        
+        <!-- Top Section Bar & Search -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-4 border-b border-amber-100">
+            <div>
+                <h2 class="text-xl sm:text-2xl font-bold text-[#1A1A1A] flex items-center gap-2.5">
+                    <span class="w-1.5 h-6 rounded-full gold-bg-gradient inline-block"></span>
+                    Featured Releases
+                </h2>
+                <p class="text-xs sm:text-sm text-gray-500 mt-1">Watch a 1-minute preview or download directly from Google Drive.</p>
+            </div>
+
+            <!-- Search Input -->
+            <div class="relative w-full sm:w-72">
+                <input type="text" id="searchInput" oninput="filterMovies()" placeholder="Search movies..." 
+                       class="w-full pl-10 pr-4 py-2.5 rounded-full bg-white border border-amber-200 focus:border-[#D4AF37] focus:ring-2 focus:ring-amber-200/60 outline-none text-sm text-[#1A1A1A] placeholder-gray-400 shadow-sm transition-all">
+                <svg class="w-4 h-4 text-[#B8860B] absolute left-3.5 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="loadingSpinner" class="flex flex-col items-center justify-center py-20">
+            <div class="w-11 h-11 border-4 border-amber-200 border-t-[#D4AF37] rounded-full animate-spin"></div>
+            <p class="mt-4 text-sm font-medium text-amber-900">Loading AKV Pictures...</p>
+        </div>
+
+        <!-- Floating Square-Proportioned Movie Grid -->
+        <div id="moviesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 sm:gap-8 hidden">
+            <!-- Movie Cards dynamically rendered here -->
+        </div>
+
+        <!-- Clean Empty State (No demo movies pre-loaded) -->
+        <div id="emptyState" class="hidden text-center py-20 px-4 bg-amber-50/25 rounded-[24px] border-2 border-dashed border-amber-300/70">
+            <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-amber-100/80 border border-amber-300 flex items-center justify-center text-[#B8860B] shadow-inner">
+                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"/>
+                </svg>
+            </div>
+            <h3 id="emptyStateTitle" class="text-xl font-bold text-[#1A1A1A]">No movies uploaded yet</h3>
+            <p id="emptyStateSubtitle" class="text-xs sm:text-sm text-gray-500 max-w-md mx-auto mt-1.5">
+                Log in via the Admin button above to add your Google Drive movie links and banners.
+            </p>
+            <button id="emptyStateAddBtn" onclick="openUploadModal()" class="hidden mt-5 mx-auto gold-bg-gradient text-white font-bold px-6 py-3 rounded-full text-sm items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+                <span>Add First Movie</span>
+            </button>
+        </div>
+
+    </main>
+
+    <!-- ==================== FLOATING '+' BUTTON (ADMIN ONLY) ==================== -->
+    <button id="floatingAddBtn" onclick="openUploadModal()" title="Add New Movie" 
+            class="hidden fixed bottom-6 right-6 z-40 w-14 h-14 sm:w-16 sm:h-16 rounded-full gold-bg-gradient text-white shadow-2xl flex items-center justify-center border-2 border-white hover:scale-105 active:scale-95 transition-transform">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+        </svg>
+    </button>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-white border-t border-amber-100 py-6 px-4 mt-12">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+            <div class="flex items-center gap-2">
+                <span class="font-royal font-bold gold-text-gradient text-base">AKV</span>
+                <span class="font-semibold text-[#1A1A1A] text-base">Pictures</span>
+                <span class="text-xs text-gray-400">© 2026 All Rights Reserved.</span>
+            </div>
+            <p class="text-xs text-amber-900/70">Powered by Google Drive Direct Cloud Streaming & Downloads</p>
+        </div>
+    </footer>
+
+    <!-- ==================== MODAL 1: ADMIN LOGIN MODAL ==================== -->
+    <div id="loginModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+        <div class="bg-white w-full max-w-md rounded-3xl border-2 border-[#D4AF37] shadow-2xl p-6 sm:p-8 relative">
+            <button onclick="closeLoginModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-gray-100 hover:bg-amber-100 text-gray-600 hover:text-amber-900 flex items-center justify-center transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+
+            <div class="text-center mb-6">
+                <div class="w-14 h-14 mx-auto mb-3 rounded-2xl gold-bg-gradient flex items-center justify-center text-white shadow-md">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-[#1A1A1A]">Admin Login</h3>
+                <p class="text-xs text-gray-500 mt-1">Sign in to manage <span class="font-semibold text-[#B8860B]">AKV Pictures</span></p>
+            </div>
+
+            <div id="loginErrorBox" class="hidden mb-4 p-3 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs font-medium flex items-center gap-2">
+                <svg class="w-4 h-4 flex-shrink-0 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                </svg>
+                <span id="loginErrorText">Invalid Login ID or Password.</span>
+            </div>
+
+            <form onsubmit="handleAdminLogin(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1.5">Login ID</label>
+                    <input type="text" id="adminIdInput" required autocomplete="off" placeholder="Enter Login ID"
+                           class="w-full px-4 py-3 rounded-xl border border-amber-200 focus:border-[#D4AF37] focus:ring-2 focus:ring-amber-200 outline-none text-sm font-medium text-[#1A1A1A]">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1.5">Password</label>
+                    <div class="relative">
+                        <input type="password" id="adminPassInput" required placeholder="Enter Password"
+                               class="w-full px-4 py-3 rounded-xl border border-amber-200 focus:border-[#D4AF37] focus:ring-2 focus:ring-amber-200 outline-none text-sm font-medium text-[#1A1A1A] pr-11">
+                        <button type="button" onclick="togglePasswordVisibility()" class="absolute right-3 top-3 text-gray-400 hover:text-[#B8860B] p-0.5">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full py-3.5 rounded-xl gold-bg-gradient text-white font-bold text-sm tracking-wide mt-2">
+                    Unlock Admin Mode
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ==================== MODAL 2: ADD NEW MOVIE MODAL (GOOGLE DRIVE LINK) ==================== -->
+    <div id="uploadModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 backdrop-blur-sm p-4 overflow-y-auto">
+        <div class="bg-white w-full max-w-lg rounded-3xl border-2 border-[#D4AF37] shadow-2xl p-6 sm:p-8 relative my-auto">
+            <button id="closeUploadBtn" onclick="closeUploadModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-gray-100 hover:bg-amber-100 text-gray-600 hover:text-amber-900 flex items-center justify-center transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+
+            <div class="mb-5">
+                <span class="px-2.5 py-1 rounded-full bg-amber-100 text-amber-900 text-[11px] font-bold uppercase tracking-wider">Google Drive Studio</span>
+                <h3 class="text-xl font-bold text-[#1A1A1A] mt-1.5">Add New Movie</h3>
+                <p class="text-xs text-gray-500">Paste your Google Drive movie link and upload or link a banner.</p>
+            </div>
+
+            <form id="movieUploadForm" onsubmit="handleMovieUpload(event)" class="space-y-4">
+                <!-- 1. Movie Title -->
+                <div>
+                    <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1">1. Movie Title *</label>
+                    <input type="text" id="movieTitleInput" required placeholder="e.g. Royal Legacy (2026)"
+                           class="w-full px-4 py-2.5 rounded-xl border border-amber-200 focus:border-[#D4AF37] focus:ring-2 focus:ring-amber-200 outline-none text-sm">
+                </div>
+
+                <!-- 2. Banner Image (Local Upload OR Image / Google Drive URL) -->
+                <div class="bg-amber-50/40 p-3.5 rounded-2xl border border-amber-200/80 space-y-2.5">
+                    <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider">2. Banner Image (Upload Photo OR Paste Link) *</label>
+                    
+                    <div class="flex items-center gap-2.5">
+                        <label class="flex-1 cursor-pointer flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl border border-dashed border-[#D4AF37] bg-white hover:bg-amber-50 text-amber-900 text-xs font-semibold transition-all">
+                            <svg class="w-4 h-4 text-[#B8860B] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                            <span id="bannerFileName" class="truncate">Upload Banner Photo</span>
+                            <input type="file" id="movieBannerFileInput" accept="image/*" onchange="handleBannerFileSelect(event)" class="hidden">
+                        </label>
+                        <img id="bannerPreviewThumb" src="" alt="Preview" class="hidden w-14 h-10 object-cover rounded-lg border border-[#D4AF37] shadow-sm flex-shrink-0">
+                    </div>
+
+                    <div class="relative flex items-center py-0.5">
+                        <div class="flex-grow border-t border-amber-200"></div>
+                        <span class="flex-shrink mx-2 text-[10px] font-bold uppercase text-amber-700">OR Paste Banner URL / Drive Image Link</span>
+                        <div class="flex-grow border-t border-amber-200"></div>
+                    </div>
+
+                    <input type="url" id="movieBannerUrlInput" oninput="handleBannerUrlInput(event)" placeholder="https://drive.google.com/file/d/... or https://..."
+                           class="w-full px-3.5 py-2 rounded-xl border border-amber-200 bg-white focus:border-[#D4AF37] focus:ring-2 focus:ring-amber-200 outline-none text-xs">
+                </div>
+
+                <!-- 3. Google Drive Video Link -->
+                <div>
+                    <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1">3. Google Drive Video Link *</label>
+                    <input type="url" id="movieDriveLinkInput" required placeholder="https://drive.google.com/file/d/FILE_ID/view?usp=sharing"
+                           class="w-full px-4 py-2.5 rounded-xl border border-amber-200 focus:border-[#D4AF37] focus:ring-2 focus:ring-amber-200 outline-none text-sm">
+                    <p class="text-[11px] text-amber-800/80 mt-1">Make sure Google Drive file access is set to <b>"Anyone with the link"</b>.</p>
+                </div>
+
+                <!-- 4. Download File Size -->
+                <div>
+                    <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1">4. Download File Size *</label>
+                    <input type="text" id="movieSizeInput" required placeholder="e.g. 1.2 GB or 850 MB"
+                           class="w-full px-4 py-2.5 rounded-xl border border-amber-200 focus:border-[#D4AF37] focus:ring-2 focus:ring-amber-200 outline-none text-sm">
+                </div>
+
+                <!-- 5. Description -->
+                <div>
+                    <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1">5. Description *</label>
+                    <textarea id="movieDescInput" rows="2" required placeholder="Movie storyline, language, audio & 1080p HD quality..."
+                              class="w-full px-4 py-2.5 rounded-xl border border-amber-200 focus:border-[#D4AF37] focus:ring-2 focus:ring-amber-200 outline-none text-sm resize-none"></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" id="uploadSubmitBtn" class="w-full py-3.5 rounded-xl gold-bg-gradient text-white font-bold text-sm tracking-wide flex items-center justify-center gap-2 disabled:opacity-60">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span>Publish Movie to AKV Pictures</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ==================== MODAL 3: DELETE CONFIRMATION MODAL ==================== -->
+    <div id="deleteConfirmModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+        <div class="bg-white w-full max-w-sm rounded-3xl border-2 border-[#D4AF37] shadow-2xl p-6 text-center">
+            <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-red-50 text-red-600 border border-red-200 flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                </svg>
+            </div>
+            <h4 class="text-lg font-bold text-[#1A1A1A]">Delete Movie?</h4>
+            <p id="deleteConfirmText" class="text-xs text-gray-500 mt-1 mb-5">Are you sure you want to remove this movie?</p>
+            <div class="flex items-center gap-3">
+                <button onclick="closeDeleteModal()" class="flex-1 py-2.5 rounded-xl border border-gray-200 text-gray-700 font-semibold text-xs hover:bg-gray-50">
+                    Cancel
+                </button>
+                <button id="confirmDeleteBtn" class="flex-1 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-xs shadow-md">
+                    Delete
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== MODAL 4: 1-MINUTE PREVIEW MODAL ==================== -->
+    <div id="previewModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-md p-3 sm:p-6">
+        <div class="bg-white w-full max-w-3xl rounded-3xl border-2 border-[#D4AF37] shadow-2xl overflow-hidden relative">
+            
+            <!-- Modal Top Bar with Countdown Timer (01:00 -> 00:00) -->
+            <div class="flex items-center justify-between px-4 sm:px-5 py-3.5 bg-white border-b border-amber-100">
+                <div class="flex items-center gap-2 min-w-0">
+                    <span class="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900 text-[11px] font-bold uppercase flex-shrink-0">1-Min Preview</span>
+                    <h4 id="previewModalTitle" class="font-bold text-[#1A1A1A] text-sm sm:text-base truncate">Movie Preview</h4>
+                </div>
+                <div class="flex items-center gap-2.5 flex-shrink-0">
+                    <span id="previewCountdownBadge" class="text-xs font-mono font-bold px-3 py-1 rounded-lg bg-amber-50 text-amber-900 border border-amber-300 flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+                        <span id="countdownText">01:00</span>
+                    </span>
+                    <button onclick="closePreviewModal()" class="w-8 h-8 rounded-full bg-gray-100 hover:bg-red-100 text-gray-600 hover:text-red-600 flex items-center justify-center transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Responsive 16:9 Player Container -->
+            <div class="relative bg-black aspect-video w-full flex items-center justify-center">
+                <!-- Google Drive Iframe Embed -->
+                <iframe id="drivePreviewFrame" class="hidden w-full h-full border-0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+                <!-- Direct MP4/WebM Fallback Video Player -->
+                <video id="directVideoPlayer" controls playsinline controlsList="nodownload" class="hidden w-full h-full object-contain">
+                    Your browser does not support HTML5 video.
+                </video>
+
+                <!-- 60-Second Limit Reached Overlay -->
+                <div id="previewLimitOverlay" class="hidden absolute inset-0 bg-white/95 backdrop-blur-md flex flex-col items-center justify-center p-6 text-center z-20">
+                    <div class="w-16 h-16 rounded-full gold-bg-gradient text-white flex items-center justify-center mb-4 shadow-lg">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg sm:text-2xl font-bold text-[#1A1A1A]">1-Minute Preview Finished</h3>
+                    <p class="text-xs sm:text-sm text-gray-600 max-w-md mt-2 mb-6">
+                        Your 60-second preview has ended. Download the full movie now to watch the complete film in high definition!
+                    </p>
+                    <div class="flex flex-wrap items-center justify-center gap-3">
+                        <button id="overlayDownloadBtn" class="gold-bg-gradient text-white font-bold px-6 py-3 rounded-full text-sm flex items-center gap-2 shadow-lg">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                            </svg>
+                            <span id="overlayDownloadText">Download Full Movie</span>
+                        </button>
+                        <button onclick="replayPreview()" class="px-5 py-3 rounded-full border border-amber-300 text-amber-900 font-semibold text-sm hover:bg-amber-50 transition-colors">
+                            Watch Preview Again
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== TOAST NOTIFICATION ==================== -->
+    <div id="toastNotification" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden items-center gap-2.5 px-5 py-3 rounded-full bg-[#1A1A1A] text-white text-xs sm:text-sm font-medium shadow-2xl border border-[#D4AF37]/60 transition-all">
+        <span class="w-2.5 h-2.5 rounded-full bg-[#D4AF37]"></span>
+        <span id="toastMessage">Notification</span>
+    </div>
+
+    <!-- ==================== APP & PERSISTENCE SCRIPT ==================== -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc, deleteDoc, doc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Exact Admin Credentials
+        const ADMIN_ID = "AKV Pictures 130211";
+        const ADMIN_PASS = "AKV 123 130211";
+        const LOCAL_BACKUP_KEY = "akv_pictures_movies_backup_v1";
+
+        // Environment Firebase Configuration
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'akv-pictures-drive-portal';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : null;
+
+        let app, auth, db;
+        let currentUser = null;
+        let useFirestore = false;
+        let isAdminMode = false;
+        let moviesList = [];
+        let uploadedBannerDataUrl = "";
+        let activePreviewMovie = null;
+        let countdownInterval = null;
+        let remainingSeconds = 60;
+
+        // ==================== GOOGLE DRIVE URL PARSER ====================
+        function extractGoogleDriveFileId(url) {
+            if (!url) return null;
+            const trimmed = url.trim();
+            // Matches /file/d/FILE_ID/ or /d/FILE_ID/
+            const pathMatch = trimmed.match(/\/(?:file\/)?d\/([a-zA-Z0-9_-]{10,})/);
+            if (pathMatch && pathMatch[1]) return pathMatch[1];
+
+            // Matches ?id=FILE_ID or &id=FILE_ID
+            const queryMatch = trimmed.match(/[?&]id=([a-zA-Z0-9_-]{10,})/);
+            if (queryMatch && queryMatch[1]) return queryMatch[1];
+
+            return null;
+        }
+
+        function formatBannerUrl(rawUrl) {
+            if (!rawUrl) return "";
+            if (rawUrl.startsWith("data:image/")) return rawUrl;
+            const driveId = extractGoogleDriveFileId(rawUrl);
+            if (driveId) {
+                // Direct viewable Google Drive thumbnail/image endpoint
+                return `https://drive.google.com/thumbnail?id=${driveId}&sz=w1200`;
+            }
+            return rawUrl.trim();
+        }
+
+        // ==================== LOCAL BACKUP HELPERS ====================
+        function getLocalMovies() {
+            try {
+                const raw = localStorage.getItem(LOCAL_BACKUP_KEY);
+                return raw ? JSON.parse(raw) : [];
+            } catch (e) {
+                return [];
+            }
+        }
+
+        function saveLocalMovies(list) {
+            try {
+                localStorage.setItem(LOCAL_BACKUP_KEY, JSON.stringify(list));
+            } catch (e) {
+                console.warn("Local backup storage limit reached.");
+            }
+        }
+
+        // ==================== INITIALIZE STORAGE & FIRESTORE ====================
+        async function initAppStorage() {
+            // Load local backup immediately for zero-latency display
+            moviesList = getLocalMovies();
+
+            if (!firebaseConfig) {
+                document.getElementById("loadingSpinner").classList.add("hidden");
+                filterMovies();
+                return;
+            }
+
+            try {
+                app = initializeApp(firebaseConfig);
+                auth = getAuth(app);
+                db = getFirestore(app);
+
+                // RULE 3: Authenticate before any Firestore operations
+                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    const cred = await signInWithCustomToken(auth, __initial_auth_token);
+                    currentUser = cred.user;
+                } else {
+                    const cred = await signInAnonymously(auth);
+                    currentUser = cred.user;
+                }
+
+                useFirestore = true;
+                listenToFirestoreMovies();
+            } catch (err) {
+                console.warn("Running with local sync fallback:", err);
+                document.getElementById("loadingSpinner").classList.add("hidden");
+                filterMovies();
+            }
+        }
+
+        // RULE 1 & RULE 2: Simple public collection listener
+        function listenToFirestoreMovies() {
+            if (!currentUser || !db) return;
+            const colRef = collection(db, 'artifacts', appId, 'public', 'data', 'movies');
+
+            onSnapshot(colRef, (snapshot) => {
+                const cloudMovies = [];
+                snapshot.forEach((docSnap) => {
+                    cloudMovies.push({ id: docSnap.id, ...docSnap.data() });
+                });
+
+                cloudMovies.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+                moviesList = cloudMovies;
+                saveLocalMovies(moviesList);
+
+                document.getElementById("loadingSpinner").classList.add("hidden");
+                filterMovies();
+            }, (error) => {
+                console.error("Firestore sync error:", error);
+                document.getElementById("loadingSpinner").classList.add("hidden");
+                filterMovies();
+            });
+        }
+
+        // ==================== RENDER FLOATING MOVIE CARDS ====================
+        function renderMovies(list) {
+            const grid = document.getElementById("moviesGrid");
+            const emptyState = document.getElementById("emptyState");
+            const emptyTitle = document.getElementById("emptyStateTitle");
+            const emptySubtitle = document.getElementById("emptyStateSubtitle");
+            const emptyAddBtn = document.getElementById("emptyStateAddBtn");
+
+            grid.innerHTML = "";
+
+            if (list.length === 0) {
+                grid.classList.add("hidden");
+                emptyState.classList.remove("hidden");
+
+                const hasSearch = document.getElementById("searchInput").value.trim().length > 0;
+                if (hasSearch) {
+                    emptyTitle.textContent = "No matching movies found";
+                    emptySubtitle.textContent = "Try searching with another movie title or keyword.";
+                    emptyAddBtn.classList.add("hidden");
+                } else {
+                    emptyTitle.textContent = "No movies uploaded yet";
+                    emptySubtitle.textContent = isAdminMode
+                        ? "You are logged in as Admin. Click below or the '+' button to add a movie via Google Drive link."
+                        : "Log in via the Admin button above to add your Google Drive movie links and banners.";
+                    if (isAdminMode) {
+                        emptyAddBtn.classList.remove("hidden");
+                        emptyAddBtn.classList.add("inline-flex");
+                    } else {
+                        emptyAddBtn.classList.add("hidden");
+                        emptyAddBtn.classList.remove("inline-flex");
+                    }
+                }
+                return;
+            }
+
+            emptyState.classList.add("hidden");
+            grid.classList.remove("hidden");
+
+            list.forEach((movie) => {
+                const card = document.createElement("article");
+                card.className = "movie-floating-card flex flex-col justify-between overflow-hidden relative group";
+
+                const deleteBtnHtml = isAdminMode ? `
+                    <button onclick="promptDeleteMovie('${movie.id}')" title="Delete Movie" 
+                            class="absolute top-3 right-3 z-20 px-3 py-1.5 rounded-full bg-white/95 text-red-600 border border-red-200 shadow-md hover:bg-red-600 hover:text-white flex items-center gap-1 text-xs font-bold transition-all">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                        </svg>
+                        <span>Delete</span>
+                    </button>
+                ` : '';
+
+                card.innerHTML = `
+                    ${deleteBtnHtml}
+                    <div>
+                        <!-- Square-Proportioned Banner Image -->
+                        <div class="relative aspect-[4/3] w-full overflow-hidden bg-amber-50 border-b border-amber-100">
+                            <img src="${movie.bannerUrl}" alt="${escapeHtml(movie.title)}" 
+                                 onerror="this.src='https://placehold.co/800x600/FFFBEB/B8860B?text=AKV+Pictures'"
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute bottom-2.5 left-3 px-2.5 py-0.5 rounded-full bg-white/95 backdrop-blur-sm border border-[#D4AF37]/60 text-[11px] font-bold text-[#8A6214] shadow-sm">
+                                AKV Pictures
+                            </div>
+                        </div>
+
+                        <!-- Movie Title & Description -->
+                        <div class="p-5 pb-3">
+                            <h3 class="text-lg font-bold text-[#1A1A1A] line-clamp-1 group-hover:text-[#B8860B] transition-colors">
+                                ${escapeHtml(movie.title)}
+                            </h3>
+                            <p class="text-xs sm:text-sm text-gray-600 mt-1.5 line-clamp-2 leading-relaxed">
+                                ${escapeHtml(movie.description)}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons: Preview & Download (with File Size) -->
+                    <div class="p-5 pt-2 flex items-center gap-2.5">
+                        <button onclick="openPreviewModal('${movie.id}')" 
+                                class="flex-1 py-2.5 px-3 rounded-xl border-2 border-[#D4AF37] bg-amber-50/50 hover:bg-amber-100/80 text-[#8A6214] font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 transition-all active:scale-95">
+                            <svg class="w-4 h-4 text-[#B8860B] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Preview</span>
+                        </button>
+
+                        <button onclick="triggerMovieDownload('${movie.id}')" 
+                                class="flex-[1.45] py-2.5 px-3 rounded-xl gold-bg-gradient text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5">
+                            <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                            </svg>
+                            <span class="truncate">Download (${escapeHtml(movie.size)})</span>
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        window.filterMovies = function() {
+            const query = document.getElementById("searchInput").value.toLowerCase().trim();
+            const filtered = moviesList.filter(m =>
+                (m.title || "").toLowerCase().includes(query) ||
+                (m.description || "").toLowerCase().includes(query)
+            );
+            renderMovies(filtered);
+        };
+
+        // ==================== ADMIN AUTHENTICATION ====================
+        window.openLoginModal = function() {
+            document.getElementById("loginErrorBox").classList.add("hidden");
+            document.getElementById("adminIdInput").value = "";
+            document.getElementById("adminPassInput").value = "";
+            const modal = document.getElementById("loginModal");
+            modal.classList.remove("hidden");
+            modal.classList.add("flex");
+            setTimeout(() => document.getElementById("adminIdInput").focus(), 100);
+        };
+
+        window.closeLoginModal = function() {
+            const modal = document.getElementById("loginModal");
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+        };
+
+        window.togglePasswordVisibility = function() {
+            const passInput = document.getElementById("adminPassInput");
+            passInput.type = passInput.type === "password" ? "text" : "password";
+        };
+
+        window.handleAdminLogin = function(e) {
+            e.preventDefault();
+            const enteredId = document.getElementById("adminIdInput").value;
+            const enteredPass = document.getElementById("adminPassInput").value;
+            const errorBox = document.getElementById("loginErrorBox");
+
+            if (enteredId === ADMIN_ID && enteredPass === ADMIN_PASS) {
+                isAdminMode = true;
+                closeLoginModal();
+                updateAdminUI();
+                filterMovies();
+                showToast("Welcome Admin! Admin Mode is now ACTIVE.");
+            } else {
+                errorBox.classList.remove("hidden");
+                document.getElementById("loginErrorText").textContent = "Invalid Login ID or Password.";
+            }
+        };
+
+        window.logoutAdmin = function() {
+            isAdminMode = false;
+            updateAdminUI();
+            filterMovies();
+            showToast("Logged out of Admin Mode.");
+        };
+
+        function updateAdminUI() {
+            const loginBtn = document.getElementById("openAdminLoginBtn");
+            const activeControls = document.getElementById("adminActiveControls");
+            const floatingAddBtn = document.getElementById("floatingAddBtn");
+
+            if (isAdminMode) {
+                loginBtn.classList.add("hidden");
+                activeControls.classList.remove("hidden");
+                activeControls.classList.add("flex");
+                floatingAddBtn.classList.remove("hidden");
+                floatingAddBtn.classList.add("flex");
+            } else {
+                loginBtn.classList.remove("hidden");
+                activeControls.classList.add("hidden");
+                activeControls.classList.remove("flex");
+                floatingAddBtn.classList.add("hidden");
+                floatingAddBtn.classList.remove("flex");
+            }
+        }
+
+        // ==================== ADD NEW MOVIE MODAL & BANNER COMPRESSION ====================
+        window.openUploadModal = function() {
+            if (!isAdminMode) return;
+            document.getElementById("movieUploadForm").reset();
+            uploadedBannerDataUrl = "";
+            document.getElementById("bannerFileName").textContent = "Upload Banner Photo";
+            document.getElementById("bannerPreviewThumb").classList.add("hidden");
+
+            const modal = document.getElementById("uploadModal");
+            modal.classList.remove("hidden");
+            modal.classList.add("flex");
+        };
+
+        window.closeUploadModal = function() {
+            const modal = document.getElementById("uploadModal");
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+        };
+
+        // Compress local uploaded image so it fits cleanly inside Firestore (< 1MB) and localStorage
+        window.handleBannerFileSelect = function(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            document.getElementById("bannerFileName").textContent = file.name;
+            document.getElementById("movieBannerUrlInput").value = "";
+
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const img = new Image();
+                img.onload = function() {
+                    const canvas = document.createElement("canvas");
+                    const maxDim = 800;
+                    let width = img.width;
+                    let height = img.height;
+
+                    if (width > maxDim || height > maxDim) {
+                        if (width > height) {
+                            height = Math.round((height * maxDim) / width);
+                            width = maxDim;
+                        } else {
+                            width = Math.round((width * maxDim) / height);
+                            height = maxDim;
+                        }
+                    }
+
+                    canvas.width = width;
+                    canvas.height = height;
+                    const ctx = canvas.getContext("2d");
+                    ctx.drawImage(img, 0, 0, width, height);
+
+                    uploadedBannerDataUrl = canvas.toDataURL("image/jpeg", 0.78);
+                    const thumb = document.getElementById("bannerPreviewThumb");
+                    thumb.src = uploadedBannerDataUrl;
+                    thumb.classList.remove("hidden");
+                };
+                img.src = event.target.result;
+            };
+            reader.readAsDataURL(file);
+        };
+
+        window.handleBannerUrlInput = function(e) {
+            const urlVal = e.target.value.trim();
+            if (urlVal) {
+                uploadedBannerDataUrl = "";
+                document.getElementById("movieBannerFileInput").value = "";
+                document.getElementById("bannerFileName").textContent = "Upload Banner Photo";
+                const formatted = formatBannerUrl(urlVal);
+                const thumb = document.getElementById("bannerPreviewThumb");
+                thumb.src = formatted;
+                thumb.classList.remove("hidden");
+            } else {
+                document.getElementById("bannerPreviewThumb").classList.add("hidden");
+            }
+        };
+
+        window.handleMovieUpload = async function(e) {
+            e.preventDefault();
+            if (!isAdminMode) return;
+
+            const title = document.getElementById("movieTitleInput").value.trim();
+            const rawBannerUrl = document.getElementById("movieBannerUrlInput").value.trim();
+            const rawDriveLink = document.getElementById("movieDriveLinkInput").value.trim();
+            const size = document.getElementById("movieSizeInput").value.trim();
+            const description = document.getElementById("movieDescInput").value.trim();
+
+            const finalBannerUrl = uploadedBannerDataUrl || formatBannerUrl(rawBannerUrl);
+
+            if (!finalBannerUrl) {
+                showToast("Please upload a banner image or paste a banner URL.");
+                return;
+            }
+
+            if (!title || !rawDriveLink || !size || !description) {
+                showToast("Please fill in all required fields.");
+                return;
+            }
+
+            const driveFileId = extractGoogleDriveFileId(rawDriveLink);
+            const submitBtn = document.getElementById("uploadSubmitBtn");
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `<span class="animate-spin inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full"></span> Saving Movie...`;
+
+            const newMovieData = {
+                title: title,
+                bannerUrl: finalBannerUrl,
+                rawDriveLink: rawDriveLink,
+                driveFileId: driveFileId || "",
+                size: size,
+                description: description,
+                createdAt: Date.now()
+            };
+
+            try {
+                if (useFirestore && currentUser && db) {
+                    const colRef = collection(db, 'artifacts', appId, 'public', 'data', 'movies');
+                    await addDoc(colRef, newMovieData);
+                } else {
+                    newMovieData.id = "local_" + Date.now();
+                    moviesList.unshift(newMovieData);
+                    saveLocalMovies(moviesList);
+                    filterMovies();
+                }
+
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = `<span>Publish Movie to AKV Pictures</span>`;
+                closeUploadModal();
+                showToast(`"${title}" has been published!`);
+            } catch (err) {
+                console.error("Error saving movie:", err);
+                // Fallback to local save if cloud fails
+                newMovieData.id = "local_" + Date.now();
+                moviesList.unshift(newMovieData);
+                saveLocalMovies(moviesList);
+                filterMovies();
+
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = `<span>Publish Movie to AKV Pictures</span>`;
+                closeUploadModal();
+                showToast(`"${title}" saved!`);
+            }
+        };
+
+        // ==================== DELETE MOVIE ====================
+        window.promptDeleteMovie = function(movieId) {
+            if (!isAdminMode) return;
+            const movie = moviesList.find(m => m.id === movieId);
+            if (!movie) return;
+
+            document.getElementById("deleteConfirmText").textContent = `Are you sure you want to delete "${movie.title}"?`;
+            document.getElementById("confirmDeleteBtn").onclick = () => executeDeleteMovie(movie);
+
+            const modal = document.getElementById("deleteConfirmModal");
+            modal.classList.remove("hidden");
+            modal.classList.add("flex");
+        };
+
+        window.closeDeleteModal = function() {
+            const modal = document.getElementById("deleteConfirmModal");
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+        };
+
+        async function executeDeleteMovie(movie) {
+            if (!isAdminMode) return;
+            closeDeleteModal();
+
+            try {
+                if (useFirestore && currentUser && db && !movie.id.startsWith("local_")) {
+                    const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'movies', movie.id);
+                    await deleteDoc(docRef);
+                } else {
+                    moviesList = moviesList.filter(m => m.id !== movie.id);
+                    saveLocalMovies(moviesList);
+                    filterMovies();
+                }
+                showToast(`"${movie.title}" deleted.`);
+            } catch (err) {
+                console.error("Delete failed:", err);
+                moviesList = moviesList.filter(m => m.id !== movie.id);
+                saveLocalMovies(moviesList);
+                filterMovies();
+                showToast(`"${movie.title}" removed.`);
+            }
+        }
+
+        // ==================== 1-MINUTE PREVIEW WITH COUNTDOWN (01:00 -> 00:00) ====================
+        const driveFrame = document.getElementById("drivePreviewFrame");
+        const directVideo = document.getElementById("directVideoPlayer");
+        const limitOverlay = document.getElementById("previewLimitOverlay");
+        const countdownText = document.getElementById("countdownText");
+
+        window.openPreviewModal = function(movieId) {
+            const movie = moviesList.find(m => m.id === movieId);
+            if (!movie) return;
+
+            activePreviewMovie = movie;
+            document.getElementById("previewModalTitle").textContent = movie.title;
+            document.getElementById("overlayDownloadText").textContent = `Download Full Movie (${movie.size})`;
+            document.getElementById("overlayDownloadBtn").onclick = () => triggerMovieDownload(movie.id);
+
+            limitOverlay.classList.add("hidden");
+            driveFrame.classList.add("hidden");
+            directVideo.classList.add("hidden");
+
+            const driveId = movie.driveFileId || extractGoogleDriveFileId(movie.rawDriveLink);
+
+            if (driveId) {
+                // Embed Google Drive Preview Player
+                driveFrame.src = `https://drive.google.com/file/d/${driveId}/preview`;
+                driveFrame.classList.remove("hidden");
+            } else {
+                // Fallback direct HTML5 Video Player
+                directVideo.src = movie.rawDriveLink;
+                directVideo.currentTime = 0;
+                directVideo.classList.remove("hidden");
+                directVideo.play().catch(() => {});
+            }
+
+            const modal = document.getElementById("previewModal");
+            modal.classList.remove("hidden");
+            modal.classList.add("flex");
+
+            startOneMinuteCountdown();
+        };
+
+        function startOneMinuteCountdown() {
+            clearInterval(countdownInterval);
+            remainingSeconds = 60;
+            updateCountdownDisplay();
+
+            countdownInterval = setInterval(() => {
+                remainingSeconds--;
+                updateCountdownDisplay();
+
+                if (remainingSeconds <= 0) {
+                    clearInterval(countdownInterval);
+                    stopPlaybackAtLimit();
+                }
+            }, 1000);
+        }
+
+        function updateCountdownDisplay() {
+            const sec = Math.max(0, remainingSeconds);
+            countdownText.textContent = sec === 60 ? "01:00" : `00:${sec.toString().padStart(2, "0")}`;
+        }
+
+        function stopPlaybackAtLimit() {
+            // Stop both iframe and direct video playback immediately after 60 seconds
+            driveFrame.src = "about:blank";
+            driveFrame.classList.add("hidden");
+
+            directVideo.pause();
+            directVideo.removeAttribute("src");
+            directVideo.load();
+            directVideo.classList.add("hidden");
+
+            limitOverlay.classList.remove("hidden");
+        }
+
+        window.replayPreview = function() {
+            if (!activePreviewMovie) return;
+            openPreviewModal(activePreviewMovie.id);
+        };
+
+        window.closePreviewModal = function() {
+            clearInterval(countdownInterval);
+            driveFrame.src = "about:blank";
+            driveFrame.classList.add("hidden");
+
+            directVideo.pause();
+            directVideo.removeAttribute("src");
+            directVideo.load();
+            directVideo.classList.add("hidden");
+
+            const modal = document.getElementById("previewModal");
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+        };
+
+        // ==================== GOOGLE DRIVE DIRECT DOWNLOAD ====================
+        window.triggerMovieDownload = function(movieId) {
+            const movie = moviesList.find(m => m.id === movieId);
+            if (!movie) return;
+
+            const driveId = movie.driveFileId || extractGoogleDriveFileId(movie.rawDriveLink);
+            const downloadUrl = driveId
+                ? `https://drive.google.com/uc?export=download&id=${driveId}`
+                : movie.rawDriveLink;
+
+            showToast(`Opening Google Drive Download (${movie.size})...`);
+            window.open(downloadUrl, "_blank", "noopener,noreferrer");
+        };
+
+        // ==================== UTILITIES ====================
+        function showToast(message) {
+            const toast = document.getElementById("toastNotification");
+            document.getElementById("toastMessage").textContent = message;
+            toast.classList.remove("hidden");
+            toast.classList.add("flex");
+
+            clearTimeout(window.toastTimer);
+            window.toastTimer = setTimeout(() => {
+                toast.classList.add("hidden");
+                toast.classList.remove("flex");
+            }, 3500);
+        }
+
+        function escapeHtml(str) {
+            const div = document.createElement("div");
+            div.textContent = str || "";
+            return div.innerHTML;
+        }
+
+        // Start App
+        initAppStorage();
+    </script>
+</body>
+</html>
